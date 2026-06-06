@@ -1,5 +1,13 @@
 # Nexus
 
+### ⚠️ This project has moved to [niki914/agentic-nexus](https://github.com/niki914/agentic-nexus)
+
+If you like it, please give us a [Star](https://github.com/niki914/agentic-nexus) ⭐
+
+For the old Breeno Source Changer source code, see the [breeno-source-changer](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/tree/breeno-source-changer) branch
+
+Telegram Community: [Telegram](https://t.me/+ZPX2xtSl6RwyZGNl)
+
 > Plug your own model into your phone's voice assistant, and let it actually get things done for you
 
 [![stars](https://img.shields.io/github/stars/Xposed-Modules-Repo/com.niki914.nexus.agentic?label=stars)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic)

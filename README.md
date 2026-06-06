@@ -6,6 +6,14 @@
 
 # Nexus
 
+### ⚠️ 原项目已迁移至 [niki914/agentic-nexus](https://github.com/niki914/agentic-nexus)
+
+喜欢的话请给项目点个 [Star](https://github.com/niki914/agentic-nexus)
+
+旧版源码请查看 [breeno-source-changer](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/tree/breeno-source-changer) 分支
+
+Tg 交流群：[Telegram](https://t.me/+ZPX2xtSl6RwyZGNl)
+
 > 让手机里的语音助手，接入你自己的模型，并真正开始替你做事
 
 [![stars](https://img.shields.io/github/stars/Xposed-Modules-Repo/com.niki914.nexus.agentic?label=stars)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic)
