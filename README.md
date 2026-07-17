@@ -1,24 +1,13 @@
-<div align="right">
-
-**[English](README_EN.md)** | 中文
-
-</div>
-
 # Nexus
 
-### ⚠️ 原项目已迁移至 [niki914/agentic-nexus](https://github.com/niki914/agentic-nexus)
-
-喜欢的话请给项目点个 [Star](https://github.com/niki914/agentic-nexus)
-
-旧版源码请查看 [breeno-source-changer](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/tree/breeno-source-changer) 分支
-
-Tg 交流群：[Telegram](https://t.me/+ZPX2xtSl6RwyZGNl)
-
-> 让手机里的语音助手, 接入你自己的模型, 并真正开始替你做事
+> [!IMPORTANT]
+> 本项目已迁移至 **[niki914/agentic-nexus](https://github.com/niki914/agentic-nexus)**，下载、文档与源码请前往主仓库。
+>
+> This project has moved to **[niki914/agentic-nexus](https://github.com/niki914/agentic-nexus)** — downloads, docs and source live in the main repo.
 
 [![stars](https://img.shields.io/github/stars/Xposed-Modules-Repo/com.niki914.nexus.agentic?label=stars)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic)
-[![release](https://img.shields.io/github/v/release/Xposed-Modules-Repo/com.niki.breeno.openai?include_prereleases)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic)
-[![downloads](https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.niki.breeno.openai/total)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic)
+[![release](https://img.shields.io/github/v/release/Xposed-Modules-Repo/com.niki914.nexus.agentic?include_prereleases)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/releases/latest)
+[![downloads](https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.niki914.nexus.agentic/total)](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/releases/latest)
 
 <table align="center">
 <tr>
@@ -28,60 +17,15 @@ Tg 交流群：[Telegram](https://t.me/+ZPX2xtSl6RwyZGNl)
 </tr>
 </table>
 
-Nexus 把你每天都在用的那个语音助手交回到你手里: 你来决定它用哪个模型、怎么思考、能做什么。它不再是一个只会查天气、定闹钟的固定程序, 而是一个真正属于你的 Agent——你说一句话, 它就能调动整台手机替你完成
+> 将 Android 系统语音助手连接到你自己的模型，并赋予它调用工具、执行任务和操作设备的能力。
+>
+> Connect your phone's system voice assistant to your own model, and give it the ability to call tools, execute tasks, and operate your device.
 
-> 当前仍处于 Beta 阶段, 能力与稳定性会持续打磨。源码暂不公开
+Nexus 是一个面向 Android 的可扩展语音 Agent。它可以接管部分系统语音助手入口（目前适配小布助手、小爱同学，依赖 Root + [LSPosed](https://github.com/lsposed/lsposed)），将语音请求交给自定义模型处理，并通过 Skills、MCP、Shell 和 SSH 等能力完成实际任务。设备暂不支持接管时，仍可使用 Nexus 内置的对话界面与全部 Agent 能力。
 
-### 它为什么值得一试
+Nexus is an extensible voice Agent for Android. It can take over system voice assistant entry points (currently OPPO/OnePlus/Realme Breeno and Xiaomi XiaoAi, requires Root + [LSPosed](https://github.com/lsposed/lsposed)), hand your voice requests to a custom model, and complete real tasks through Skills, MCP, Shell, and SSH. When takeover is not yet supported on your device, Nexus's built-in chat interface with full Agent capabilities still works.
 
-它是一个 Agent, 普通的 AI 应用止步于"换个模型回答"。Nexus 在做的事不同——
-
-<table align="center">
-<tr>
-<td align="center" valign="middle"><img src="https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/blob/main/res/agentic/termux_long_cn.jpg?raw=true" alt="termux" width="200"/></td>
-<td align="center" valign="middle"><img src="https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/blob/main/res/agentic/headless_cc_cn.jpg?raw=true" alt="cc" width="200"/></td>
-<td align="center" valign="middle"><img src="https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/blob/main/res/agentic/skill_long_cn.jpg?raw=true" alt="skill" width="200"/></td>
-</tr>
-</table>
-
-- **Skills 系统**: Agent 应用的敲门砖——为你的助手带来更多种可能性
-- **MCP**: 自由加入各种工具组，Notion、GitHub、HomeKit...资源决定上限
-- **接管规则**: 你定义 Agent 什么时候该出手接管、什么时候该让系统助手来调闹钟
-- **记忆系统**: 记住你的偏好, 换一段新对话也不会忘
-- **会话历史**: 浏览、复刻任何一段对话。Agent 的每一次成长都有迹可循
-
-**它和 Android 真正长在一起**
-
-这才是 Nexus 跟 ChatBot 拉开距离的地方——
-
-- **终端, 三个梯度**: 普通应用权限 -> [Shizuku](https://github.com/rikkaapps/shizuku) -> Root
-- **SSH, 打通两个世界**: 连上 [Termux](https://github.com/termux/termux-app), 你的 Android 就有了 Linux 环境；连上开发机, Agent 就能操作你的工作站
-
-但最关键的甚至不是这些能力本身, 而是: **你不需要懂终端**。告诉 Agent 你要做什么, 它自己写命令、自己执行、自己处理结果。你要的只是结果
-
-这带来的终极玩法: **连接 [claude-code](https://github.com/anthropics/claude-code) 做无头 AI Coding**——Agent 在你手机上, 帮你命令 cc 干活, 代码跑在远端, 一句话搞定。懂的都懂
-
-### 技术基础
-
-AI 对话 & Tooling: [s3ss10n](https://github.com/niki914/s3ss10n)
-UI: Material3E X [Liquid Glass](https://github.com/Kyant0/AndroidLiquidGlass)
-Shell & SSH 终端能力: [libterm](https://github.com/niki914/libterm)
-
-### 兼容性
-
-- 已适配主流厂商的语音助手（小布、小爱）, 更多适配持续进行中
-- 当当前设备暂不支持接管时, 仍可使用 Nexus 内置的对话界面
-- 支持 DeepSeek、OpenAI、Anthropic、Google 等模型, 也可填写兼容接口
-- 自带模型服务的 API Key 即可使用, Nexus 不内置模型账号
-
-### 反馈
-
-反馈时请尽量包含: 
-
-- 手机型号与系统版本
-- 使用的语音助手类型
-- 助手版本号与 Nexus 版本号
-- 复现步骤、截图或录屏
-- 如果可用, 附上相关日志
-
-社区与反馈入口以应用内"关于"页面展示为准
+- 源码 / Source: [niki914/agentic-nexus](https://github.com/niki914/agentic-nexus)
+- 下载 / Download: [Releases](https://github.com/niki914/agentic-nexus/releases/latest)
+- 交流群 / Community: [Telegram](https://t.me/+ZPX2xtSl6RwyZGNl)
+- 旧版源码 / Legacy source: [breeno-source-changer](https://github.com/Xposed-Modules-Repo/com.niki914.nexus.agentic/tree/breeno-source-changer)
